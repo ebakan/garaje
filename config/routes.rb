@@ -1,7 +1,11 @@
 Garaje::Application.routes.draw do
   devise_for :users
-  root to: "garages#index"
-  match '*path' => "garages#index"
+  root to: 'garages#index'
+  post '/garages/:id/toggle' => 'garages#toggle', as: 'garage'
+  post '/garages/:id/permissions' => 'garages#add_permission', as: 'garage'
+  delete '/garages/:id/permissions' => 'garages#revoke_permission', as: 'garage'
+  resources :garages, except: [:edit, :new]
+  match '*path' => 'garages#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
