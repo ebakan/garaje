@@ -1,5 +1,7 @@
 Garaje::Application.routes.draw do
   devise_for :users
+  root to: "garages#index"
+  match '*path' => "garages#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
