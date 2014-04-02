@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140402191137) do
+ActiveRecord::Schema.define(:version => 20140402214002) do
 
   create_table "garages", :force => true do |t|
     t.boolean  "open",       :default => false, :null => false
@@ -19,6 +19,13 @@ ActiveRecord::Schema.define(:version => 20140402191137) do
     t.integer  "user_id"
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
+  end
+
+  create_table "permissions", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "garage_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|
