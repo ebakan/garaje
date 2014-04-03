@@ -1,0 +1,2 @@
+directives = angular.module 'garajeDirectives', []
+

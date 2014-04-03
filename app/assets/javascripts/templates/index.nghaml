@@ -1,0 +1,2 @@
+%div{:"ng-repeat" => "garage in garages"}
+  %a{href: "/garages/{{garage.id}}"} {{garage.name}}

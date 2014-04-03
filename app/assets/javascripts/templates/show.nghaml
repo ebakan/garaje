@@ -1,0 +1,3 @@
+%div {{garage.name}}
+%div {{garage.open ? "Open" : "Closed"}}
+

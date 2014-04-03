@@ -25,7 +25,10 @@ class GaragesController < ApplicationController
   end
 
   def show
-    render json: @garage
+    respond_to do |format|
+      format.html { render action: "index" }
+      format.json { render json: Garage.find_by_id(params[:id]) }
+    end
   end
 
   def update
