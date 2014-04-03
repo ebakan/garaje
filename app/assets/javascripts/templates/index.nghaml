@@ -1,2 +1,5 @@
 %div{:"ng-repeat" => "garage in garages"}
-  %a{href: "/garages/{{garage.id}}"} {{garage.name}} Owner: {{garage.user.email}} State: {{garage.open ? "Open" : "Closed"}}
+  %a{href: "/garages/{{garage.id}}"} {{garage.name}}
+  %ul
+    %li Owner: {{garage.user.email}}
+    %div{toggle: "garage"}

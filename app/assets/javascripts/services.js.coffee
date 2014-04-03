@@ -24,4 +24,3 @@ services.factory 'Garage', ['$resource', ($resource) ->
       url: '/garages/:id/permissions'
 
 ]
-
