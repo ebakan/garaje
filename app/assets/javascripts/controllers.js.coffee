@@ -5,11 +5,9 @@ controllers.controller 'RootCtrl', ['$scope', 'Garage', ($scope, Garage) ->
 ]
 
 controllers.controller 'GarajeCtrl', ['$scope', '$routeParams', 'Garage', ($scope, $routeParams, Garage) ->
-  console.log "Garaje"
-  console.log $routeParams
   $scope.garage = Garage.get $routeParams
-  console.log $scope.garage
-  $scope.garage.$promise.then (value) ->
-    console.log value
+  $scope.toggle = (garage) ->
+    Garage.toggle(garage).$promise.then (v) ->
+      garage.open ^= true
 ]
 

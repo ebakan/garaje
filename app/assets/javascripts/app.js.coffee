@@ -1,7 +1,6 @@
 app = angular.module 'garaje', ['templates', 'ngRoute', 'garajeControllers', 'garajeServices', 'garajeDirectives']
 
 app.config ['$routeProvider', '$locationProvider', ($routeProvider, $locationProvider) ->
-  console.log "app"
   $routeProvider.when '/',
     templateUrl: 'index.html'
     controller: 'RootCtrl'
@@ -11,6 +10,5 @@ app.config ['$routeProvider', '$locationProvider', ($routeProvider, $locationPro
   $routeProvider.otherwise
     redirect_to: "/"
   $locationProvider.html5Mode(true)
-  console.log "hi"
 ]
 

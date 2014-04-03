@@ -1,9 +1,9 @@
 Garaje::Application.routes.draw do
   devise_for :users
   root to: 'garages#index'
-  post '/garages/:id/toggle' => 'garages#toggle', as: 'garage'
-  post '/garages/:id/permissions' => 'garages#add_permission', as: 'garage'
-  delete '/garages/:id/permissions' => 'garages#revoke_permission', as: 'garage'
+  post '/garages/:id/toggle' => 'garages#toggle'
+  post '/garages/:id/permissions' => 'garages#add_permission'
+  delete '/garages/:id/permissions' => 'garages#revoke_permission'
   resources :garages, except: [:edit, :new]
   match '*path' => 'garages#index'
 
