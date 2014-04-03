@@ -1,4 +1,8 @@
 %a{href: "/"} Home
 %div {{garage.name}}
+%div Owner: {{garage.user.email}}
 %button{:"ng-click" => "toggle(garage)"} {{garage.open ? "Open" : "Closed"}}
-
+%div
+  %div Users:
+  %ul
+    %li{:"ng-repeat" => "user in garage.users"} {{user.email}}

@@ -19,7 +19,7 @@ class GaragesController < ApplicationController
   end
 
   def add_permission
-    render json: Permission.create!(user: User.find_by_email(params[:email]) || current_user, garage: @garage)
+    render json: Permission.create!(user: User.find_by_email(params[:email]), garage: @garage)
   end
 
   def revoke_permission
@@ -33,7 +33,7 @@ class GaragesController < ApplicationController
   def show
     respond_to do |format|
       format.html { render action: "index" }
-      format.json { render json: Garage.find_by_id(params[:id]) }
+      format.json { render json: Garage.find_by_id(params[:id]).to_json(include: [:user, :users]) }
     end
   end
 
