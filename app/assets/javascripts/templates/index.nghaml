@@ -1,5 +1,7 @@
-%div{:"ng-repeat" => "garage in garages"}
-  %a{href: "/garages/{{garage.id}}"} {{garage.name}}
-  %ul
-    %li Owner: {{garage.user.email}}
-    %div{toggle: "garage"}
+%div My Garages:
+%div{:"ng-repeat" => "garage in garages | filter: {user_id: current_user_id} | orderBy:'name'"}
+  %div{garage: "garage"}
+%br
+%div Other Garages:
+%div{:"ng-repeat" => "garage in garages | filter: {user_id: '!' + current_user_id} | orderBy:'name'"}
+  %div{garage: "garage"}

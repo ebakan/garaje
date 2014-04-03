@@ -24,3 +24,7 @@ services.factory 'Garage', ['$resource', ($resource) ->
       url: '/garages/:id/permissions'
 
 ]
+
+services.factory 'Session', ['$window', ($window) ->
+  current_user_id: => $window.current_user_id
+]

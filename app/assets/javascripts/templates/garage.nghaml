@@ -1,0 +1,5 @@
+%a{href: "/garages/{{garage.id}}"} {{garage.name}}
+%ul
+  %li Owner: {{garage.user.email}}
+  %div{toggle: "garage"}
+

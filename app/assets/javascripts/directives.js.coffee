@@ -9,3 +9,8 @@ directives.directive 'toggle', () ->
       Garage.toggle(garage).$promise.then (v) ->
         garage.open ^= true
   ]
+
+directives.directive 'garage', () ->
+  scope:
+    garage: "="
+  templateUrl: "garage.html"
